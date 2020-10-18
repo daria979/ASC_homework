@@ -1,2 +1,5 @@
 # ASC_homework
-Aici sunt temele de la Arhitectura Sistemelor de Calcul 2020
+Universitatea din Oradea
+Facultatea de Informatica si stiinte
+Arhitectura Sistemelor de Calcul 2020
+Aici sunt incarcate temele de la ASC
