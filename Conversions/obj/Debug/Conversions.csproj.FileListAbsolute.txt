@@ -1,0 +1,7 @@
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\bin\Debug\Conversions.exe.config
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\bin\Debug\Conversions.exe
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\bin\Debug\Conversions.pdb
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\obj\Debug\Conversions.csprojAssemblyReference.cache
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\obj\Debug\Conversions.csproj.CoreCompileInputs.cache
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\obj\Debug\Conversions.exe
+C:\Users\Daria\Source\Repos\ASC_homework\Conversions\obj\Debug\Conversions.pdb
