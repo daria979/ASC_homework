@@ -82,7 +82,42 @@ namespace Conversions
             
         }
 
-        
+        static double xbaze_TO_ten_minus(int numar, int bazaNumar) //adaugat de mine
+        {
+            int number_copy = numar;
+            int exponent = 0;
+            while (numar > 0)
+            {
+                exponent--;
+                numar = numar / 10;
+            }
+
+            //Console.WriteLine("exponentu este " + exponent);
+            Stack<int> stiva = new Stack<int>();
+            while (number_copy > 0)
+            {
+                stiva.Push(number_copy % 10);
+                number_copy = number_copy / 10;
+                //int cifra = stiva.Pop();
+                //Console.WriteLine(cifra);
+            }
+            double produs = 0;
+            double result = 0;
+            while (stiva.Count > 0)
+            {
+
+                int cifra = stiva.Pop();
+                produs = cifra * Math.Pow(bazaNumar, exponent);
+                result = result + produs;
+                exponent++;
+            }
+
+            return result;
+
+
+        }
+
+
 
         static string ConversieRapida(int numar, int bazaTinta)
         {
@@ -208,15 +243,17 @@ namespace Conversions
             //result = result.TrimStart('0');
             return result;
         }
-        static void Main(string[] args)
+
+        static void Main1()
         {
+
             try
             {
                 // creati nume de identificatori expresivi
                 int numar = 0;
                 int bazaNumar = 0;
                 int bazaTinta = 0;
-                
+
 
                 // Introducem numarul pe care vrem sa il convertim
                 Console.WriteLine("Introduceti numarul pe care vreti sa-l convertiti: ");
@@ -248,7 +285,6 @@ namespace Conversions
                     throw new Exception("Baza tinta poate fi cuprinsa intre 2 si 16");
                 }
 
-
                 //cazuri posibile de convertire//
 
                 if (bazaNumar == 10 && (bazaTinta != 4 || bazaTinta != 8 || bazaTinta != 16))
@@ -256,27 +292,32 @@ namespace Conversions
                     Console.Write("Rezultat:");
                     Console.WriteLine(ten_TO_xbase(numar, bazaTinta));
                 }
-                if(bazaNumar==10 && (bazaTinta == 4 || bazaTinta == 8 || bazaTinta == 16))
+                if (bazaNumar == 10 && (bazaTinta == 4 || bazaTinta == 8 || bazaTinta == 16))
                 {
                     Console.Write("Rezultat:");
                     Console.WriteLine(ConversieRapida(ten_TO_xbase(numar, 2), bazaTinta));
                 }
-                if (bazaTinta == 10 && (bazaTinta != 4 || bazaTinta != 8 || bazaTinta != 16))
+                if (bazaTinta == 10 && (bazaNumar != 4 || bazaNumar != 8 || bazaNumar != 16))
                 {
                     Console.Write("Rezultat:");
                     Console.WriteLine(xbaze_TO_ten(numar, bazaNumar));
                 }
-                if(bazaNumar == 2 && (bazaTinta == 4 || bazaTinta == 8 || bazaTinta == 16))
+                if (bazaTinta == 10 && (bazaNumar == 4 || bazaNumar == 8 || bazaNumar == 16))
+                {
+                    Console.Write("Rezultat:");
+                    Console.WriteLine(xbaze_TO_ten(numar, bazaNumar));
+                }
+                if (bazaNumar == 2 && (bazaTinta == 4 || bazaTinta == 8 || bazaTinta == 16))
                 {
                     Console.Write("Rezultat:");
                     Console.WriteLine(ConversieRapida(numar, bazaTinta));
                 }
-                if(bazaNumar !=2 && bazaNumar != 10 && (bazaTinta ==4 || bazaTinta == 8||bazaTinta == 16))
+                if (bazaNumar != 2 && bazaNumar != 10 && (bazaTinta == 4 || bazaTinta == 8 || bazaTinta == 16))
                 {
                     Console.Write("Rezultat:");
                     Console.WriteLine(ConversieRapida(ten_TO_xbase(xbaze_TO_ten(numar, bazaNumar), 2), bazaTinta));
                 }
-                if(bazaNumar>=2 && bazaNumar != 10  && (bazaTinta != 4 || bazaTinta != 8 || bazaTinta != 16))
+                if (bazaNumar >= 2 && bazaNumar != 10 && (bazaTinta != 4 || bazaTinta != 8 || bazaTinta != 16))
                 {
                     Console.Write("Rezultat:");
                     Console.WriteLine(ten_TO_xbase(xbaze_TO_ten(numar, bazaNumar), bazaTinta));
@@ -285,13 +326,107 @@ namespace Conversions
 
                 //cazul care da eroare: din baza 10 in baza 16 :(
 
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        static void Main2()
+        {
+            try
+            {
+                // creati nume de identificatori expresivi
+                double numar = 0;
+                int bazaNumar = 0;
+                int bazaTinta = 0;
+
+                
+
+                
+
+
+
+                // Introducem numarul pe care vrem sa il convertim
+                Console.WriteLine("Introduceti numarul pe care vreti sa-l convertiti: ");
+
+                if (!double.TryParse(Console.ReadLine(), out numar))
+                {
+                    throw new Exception("Nu ati introdus un numar !");
+                }
+
+                //determinarea partii intregi si fractionare anumarului sub forma de string
+                string num_line = Convert.ToString(numar);
+                int intpart ;
+                int decpart ;
+                char[] dot = { '.' };
+                string[] numere_intregi = num_line.Split(dot, StringSplitOptions.RemoveEmptyEntries);
+
+                intpart = int.Parse(numere_intregi[0]);
+                decpart = int.Parse(numere_intregi[1]);
+
+               
+
+                Console.WriteLine("Introduceti baza numarului pe care vreti sa-l convertiti: ");
+
+                if (!int.TryParse(Console.ReadLine(), out bazaNumar))
+                {
+                    throw new Exception("Nu ati introdus un numar !");
+                }
+
+
+                // Introducem baza tinta
+                Console.WriteLine("Introduceti baza tinta (un numar natural intre 2 si 16):");
+
+                if (!int.TryParse(Console.ReadLine(), out bazaTinta))
+                {
+                    throw new Exception("Nu ati introdus un numar !");
+                }
+
+
+                if (bazaTinta < 2 || bazaTinta > 16)
+                {
+                    throw new Exception("Baza tinta poate fi cuprinsa intre 2 si 16");
+                }
+
+                int INT;
+                double DEC;
+                double SUM;
+                //cazuri posibile de convertire//
+                Console.WriteLine("Momentan programul merge doar pentru conversia din baza 2 in baza 10.");
+                if(bazaNumar>=2 && bazaTinta==10)
+                {
+                    INT=xbaze_TO_ten(intpart,bazaNumar);
+                    DEC=xbaze_TO_ten_minus(decpart,bazaNumar);
+                    SUM = INT + DEC;
+                    Console.WriteLine(SUM);
+                }
+                
+
+
+
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-           
+            
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Daca doriti sa lucrati cu numere intregi tastati 14\nDaca doriti sa lucrati cu numere reale(cu virgula) tastati 0");
+            int type;
+            type = int.Parse(Console.ReadLine());
+            if (type == 1)
+                Main1();
+            else
+                Main2();
+
+            
+
         }
     }
 }
