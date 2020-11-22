@@ -1,0 +1,7 @@
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\bin\Debug\Automat de vanzari.exe.config
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\bin\Debug\Automat de vanzari.exe
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\bin\Debug\Automat de vanzari.pdb
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\obj\Debug\Automat de vanzari.csprojAssemblyReference.cache
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\obj\Debug\Automat de vanzari.csproj.CoreCompileInputs.cache
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\obj\Debug\Automat de vanzari.exe
+C:\Users\Daria\source\repos\ASC_homework\Automat de vanzari\obj\Debug\Automat de vanzari.pdb
