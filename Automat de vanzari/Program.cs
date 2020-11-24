@@ -184,6 +184,7 @@ namespace Automat_de_vanzari
         {
             c = char.Parse(Console.ReadLine());
             Console.Clear();
+
         }
     }
 }
