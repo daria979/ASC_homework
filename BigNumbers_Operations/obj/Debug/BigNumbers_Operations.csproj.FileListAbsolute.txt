@@ -1,0 +1,7 @@
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\bin\Debug\BigNumbers_Operations.exe.config
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\bin\Debug\BigNumbers_Operations.exe
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\bin\Debug\BigNumbers_Operations.pdb
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\obj\Debug\BigNumbers_Operations.csprojAssemblyReference.cache
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\obj\Debug\BigNumbers_Operations.csproj.CoreCompileInputs.cache
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\obj\Debug\BigNumbers_Operations.exe
+C:\Users\Daria\source\repos\ASC_homework\BigNumbers_Operations\obj\Debug\BigNumbers_Operations.pdb
